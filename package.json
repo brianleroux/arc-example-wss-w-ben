@@ -1,0 +1,15 @@
+{
+  "name": "wss-test",
+  "version": "0.0.0",
+  "description": "A fresh new Architect project!",
+  "scripts": {
+    "start": "npx sandbox"
+  },
+  "devDependencies": {
+    "@architect/architect": "^11.2.0"
+  },
+  "dependencies": {
+    "@architect/functions": "^8.1.8",
+    "@begin/data": "^5.0.5"
+  }
+}
