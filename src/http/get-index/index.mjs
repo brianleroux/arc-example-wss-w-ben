@@ -31,18 +31,14 @@ async function fn (req) {
         <textarea name=msg></textarea>
         <button>Send message</button>
       </form>
-
-      <script>
-        const URL = "${ process.env.ARC_WSS_URL }";
-      </script>
-      
-      <h2>WebSocket Test</h2>
-
-      <p>Sends a ping every five seconds</p>
       <div id="output"></div>
 
+      <script>
+        window.URL = "${ process.env.ARC_WSS_URL }";
+        window.STATE = JSON.parse(atob("${ btoa(JSON.stringify({messages})) }"))
+      </script>
+
       <script src=/_static/wss.js></script>
-      <pre>${JSON.stringify({messages}, null ,2)}</pre>
     `
   }
 }

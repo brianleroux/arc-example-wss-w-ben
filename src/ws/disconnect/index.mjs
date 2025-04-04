@@ -8,5 +8,9 @@ async function fn (req) {
     table: 'connections',
     key: req.requestContext.connectionId,
   })
+  await data.destroy({
+    table: 'connections-by-name',
+    key: req.session.name
+  })
   return { statusCode: 200 }
 }

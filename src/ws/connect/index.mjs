@@ -10,9 +10,11 @@ async function fn (req) {
     name: req.session.name,
     ttl: 7200
   })
-  let connections = await data.get({
-    table: 'connections'
+  await data.set({
+    table: 'connections-by-name',
+    key: req.session.name,
+    connectionId: req.requestContext.connectionId,
+    ttl: 7200
   })
-  console.log(connections)
   return { statusCode: 200 }
 }
